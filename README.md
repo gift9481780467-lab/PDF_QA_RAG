@@ -6,7 +6,7 @@ This project is an end-to-end **Retrieval-Augmented Generation (RAG)** applicati
 
 The application extracts text from a PDF, converts the content into semantic embeddings using Sentence Transformers, stores the embeddings in a FAISS vector database, retrieves the most relevant chunks based on the user's query, and generates accurate answers using **Azure OpenAI GPT-4.1 Mini**.
 
-The project is deployed using **Docker** and provides both:
+The project is containerized using **Docker** and provides both:
 
 - FastAPI REST API
 - Gradio Web Interface
@@ -21,7 +21,7 @@ The project is deployed using **Docker** and provides both:
 - 🤖 SentenceTransformer Embeddings
 - 💬 Azure OpenAI GPT-4.1 Mini Integration
 - 🌐 FastAPI REST API
-- 🖥 Gradio User Interface
+- 🖥️ Gradio User Interface
 - 🐳 Docker Containerization
 
 ---
@@ -44,7 +44,7 @@ The project is deployed using **Docker** and provides both:
 
 ## Architecture
 
-```
+```text
                  PDF Document
                       │
                       ▼
@@ -59,7 +59,7 @@ The project is deployed using **Docker** and provides both:
                       ▼
                FAISS Vector Store
                       │
-          User Question
+             User Question
                       │
                       ▼
          Semantic Similarity Search
@@ -78,16 +78,15 @@ The project is deployed using **Docker** and provides both:
 
 ## Project Structure
 
-```
-pdf-rag-chatbot/
+```text
+PDF_QA_RAG/
 
 │── rag_app.py
+│── pdf_qa.py
 │── Dockerfile
 │── requirements.txt
 │── README.md
-│── sample.pdf
-│── screenshots/
-│── architecture/
+│── 12 Rules for Life An Antidote to Chaos (PDF)
 ```
 
 ---
@@ -97,9 +96,9 @@ pdf-rag-chatbot/
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/pdf-rag-chatbot.git
+git clone https://github.com/gift9481780467-lab/PDF_QA_RAG.git
 
-cd pdf-rag-chatbot
+cd PDF_QA_RAG
 ```
 
 Install dependencies
@@ -112,7 +111,7 @@ pip install -r requirements.txt
 
 ## Running the Application
 
-### Local
+### Run Locally
 
 ```bash
 python rag_app.py
@@ -120,26 +119,23 @@ python rag_app.py
 
 ---
 
-### Docker
+### Run with Docker
 
-Build Docker Image
+Build the Docker image
 
 ```bash
 docker build -t pdf-rag .
 ```
 
-Run Container
+Run the Docker container
 
 ```bash
-docker run \
--e AZURE_OPENAI_API_KEY=YOUR_KEY \
--p 8000:8000 \
-pdf-rag
+docker run -e AZURE_OPENAI_API_KEY=YOUR_KEY -p 8000:8000 pdf-rag
 ```
 
 ---
 
-## API Endpoint
+## API Endpoints
 
 ### Home
 
@@ -147,23 +143,23 @@ pdf-rag
 GET /
 ```
 
-Returns
+Response
 
 ```json
 {
-    "message": "PDF RAG API Running"
+  "message": "PDF RAG API Running"
 }
 ```
 
 ---
 
-### Ask Question
+### Ask a Question
 
 ```
 POST /ask
 ```
 
-Example
+Example Question
 
 ```
 What are the 12 Rules for Life?
@@ -171,15 +167,36 @@ What are the 12 Rules for Life?
 
 ---
 
+## Skills Demonstrated
+
+- Retrieval-Augmented Generation (RAG)
+- Azure OpenAI Integration
+- Semantic Search
+- Vector Databases (FAISS)
+- Sentence Transformers
+- FastAPI
+- Docker
+- REST API Development
+- Natural Language Processing (NLP)
+- Prompt Engineering
+
+---
+
 ## Future Improvements
 
-- Multiple PDF Upload
-- Persistent FAISS Index
-- Azure Blob Storage Integration
-- Authentication & Authorization
-- Streaming Responses
-- Chat History
-- LangChain Integration
+- Support multiple PDF uploads
+- Persistent FAISS vector database
+- Azure Blob Storage integration
+- User Authentication
+- Streaming responses
+- Chat history
+- LangChain integration
+
+---
+
+## Screenshots
+
+> Screenshots of the Gradio interface and Docker deployment will be added soon.
 
 ---
 
@@ -187,8 +204,11 @@ What are the 12 Rules for Life?
 
 **Gift David**
 
-GitHub:
-https://github.com/gift9481780467-lab
+- GitHub: https://github.com/gift9481780467-lab
+- LinkedIn: *(Add your LinkedIn profile URL here)*
 
-LinkedIn:
-(Add your LinkedIn URL here)
+---
+
+## License
+
+This project is intended for learning and portfolio purposes.
